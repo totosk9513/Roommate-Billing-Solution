@@ -1,4 +1,4 @@
-package org.project.enums;
+package org.roommate.enums;
 
 public enum Gender
 {

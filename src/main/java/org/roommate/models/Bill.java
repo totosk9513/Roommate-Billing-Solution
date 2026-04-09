@@ -1,4 +1,4 @@
-package org.project.models;
+package org.roommate.models;
 
 import java.util.Date;
 import java.util.List;

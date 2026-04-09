@@ -1,11 +1,18 @@
-package org.project.models;
+package org.roommate.models;
 
-import org.project.enums.Gender;
+import org.roommate.enums.Gender;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Person
 {
-    private String name;
-    private Gender gender;
+    protected String name;
+    protected Gender gender;
+    protected List<IOU> IOUS = new ArrayList<>();
+
+    private List<Bill> expenses;
+    private final List<IOU> iouList = new ArrayList<>();
 
     private Person()
     {
@@ -17,6 +24,10 @@ public abstract class Person
     {
         this.name = name;
         this.gender = gender;
+    }
+
+    public void addDebt(IOU IOU) {
+        this.IOUS.add(IOU);
     }
 
     private String getName()
