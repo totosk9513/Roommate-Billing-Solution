@@ -9,7 +9,7 @@ public abstract class Person
 {
     protected String name;
     protected Gender gender;
-    protected List<IOU> IOUS = new ArrayList<>();
+    protected List<IOU> IOUs = new ArrayList<>();
 
     private List<Bill> expenses;
     private final List<IOU> iouList = new ArrayList<>();
@@ -27,7 +27,7 @@ public abstract class Person
     }
 
     public void addDebt(IOU IOU) {
-        this.IOUS.add(IOU);
+        this.IOUs.add(IOU);
     }
 
     private String getName()

@@ -1,6 +1,7 @@
 package org.roommate.models;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class IOU
 {
@@ -23,4 +24,11 @@ public class IOU
     public Person getCreditor() { return creditor; }
     public double getAmount() { return amount; }
     public String getReason() { return reason; }
+    public LocalDateTime getIssuedAt() {return issuedAt; }
+//
+//    public void setDebtor() {};
+//    public void setCreditor() {};
+//    public void setReason() {};
+//    public void setIssuedAt() {};
+
 }

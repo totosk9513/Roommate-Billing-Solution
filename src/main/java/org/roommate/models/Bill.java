@@ -1,5 +1,6 @@
 package org.roommate.models;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -7,10 +8,12 @@ public abstract class Bill
 {
     private String name;
     private double grandTotalPrice;
-    private Person payer; //FIXME: Solid 원칙에 어긋날 수도 있음
+    private Person payer;
     private List<Person> beneficiaries;
-    private Date dueDate;
-    private Date paidDate;
+    private LocalDateTime dueDate;
+    private LocalDateTime paidDate;
+
+//    private List<IOU> relatedIOUs; //FIXME: SSOT 원칙에 어긋날 수도 있음. 나중에 ACID DB 쓸 때 의미 없을 수 있음.
 
     public String getName()
     {
@@ -52,22 +55,22 @@ public abstract class Bill
         this.beneficiaries = beneficiaries;
     }
 
-    public Date getDueDate()
+    public LocalDateTime getDueDate()
     {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate)
+    public void setDueDate(LocalDateTime dueDate)
     {
         this.dueDate = dueDate;
     }
 
-    public Date getPaidDate()
+    public LocalDateTime getPaidDate()
     {
         return paidDate;
     }
 
-    public void setPaidDate(Date paidDate)
+    public void setPaidDate(LocalDateTime paidDate)
     {
         this.paidDate = paidDate;
     }
