@@ -34,5 +34,9 @@ public class SimpleSplitCalculatorService extends CalculatorService
 
     //    public void
 
+    public void main(String[] args)
+    {
 
+
+    }
 }

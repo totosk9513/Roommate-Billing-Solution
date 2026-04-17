@@ -8,10 +8,14 @@ public abstract class Bill
 {
     private String name;
     private double grandTotalPrice;
+//    private double subTotal;
+//    private List<BillFee> billFees ;
     private Person payer;
     private List<Person> beneficiaries;
-    private LocalDateTime dueDate;
+//    private LocalDateTime dueDate;
     private LocalDateTime paidDate;
+//    private List<Item> items;
+
 
 //    private List<IOU> relatedIOUs; //FIXME: SSOT 원칙에 어긋날 수도 있음. 나중에 ACID DB 쓸 때 의미 없을 수 있음.
 
@@ -55,15 +59,15 @@ public abstract class Bill
         this.beneficiaries = beneficiaries;
     }
 
-    public LocalDateTime getDueDate()
-    {
-        return dueDate;
-    }
-
-    public void setDueDate(LocalDateTime dueDate)
-    {
-        this.dueDate = dueDate;
-    }
+//    public LocalDateTime getDueDate()
+//    {
+//        return dueDate;
+//    }
+//
+//    public void setDueDate(LocalDateTime dueDate)
+//    {
+//        this.dueDate = dueDate;
+//    }
 
     public LocalDateTime getPaidDate()
     {
