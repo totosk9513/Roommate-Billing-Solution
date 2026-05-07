@@ -20,34 +20,90 @@ public abstract class Person
         this.gender = Gender.OTHERS;
     }
 
+    public Person(String name)
+    {
+        this.name = name;
+//        this.gender = gender;
+    }
+
     public Person(String name, Gender gender)
     {
         this.name = name;
         this.gender = gender;
     }
 
-    public void addDebt(IOU IOU) {
+
+    public List<IOU> getDebts()
+    {
+        List<IOU> debts = new ArrayList<>();
+        for (IOU iou : IOUs)
+        {
+            if (iou.getDebtor().equals(this))
+            {
+                debts.add(iou);
+            }
+        }
+        return debts;
+    }
+
+    public List<IOU> getCredits()
+    {
+        List<IOU> debts = new ArrayList<>();
+        for (IOU iou : IOUs)
+        {
+            if (iou.getCreditor().equals(this))
+            {
+                debts.add(iou);
+            }
+        }
+        return debts;
+    }
+
+    public List<IOU> getIouList()
+    {
+        return IOUs;
+    }
+
+    public void addIOU(IOU IOU) {
         this.IOUs.add(IOU);
     }
 
-    private String getName()
+    public double getTotalDebtAmount()
+    {
+        return iouList.stream()
+                .filter(iou -> iou.getDebtor().equals(this))
+                .mapToDouble(IOU::getAmount)
+                .sum();
+    }
+
+    // 내가 받아야 할 총액 계산
+    public double getTotalCreditAmount()
+    {
+        return iouList.stream()
+                .filter(iou -> iou.getCreditor().equals(this))
+                .mapToDouble(IOU::getAmount)
+                .sum();
+    }
+
+    public String getName()
     {
         return this.name;
     }
 
-    private void changeName(String newName)
+    public void changeName(String newName)
     {
         this.name = newName;
         //TODO: add a log that tells this person has changed the name.
     }
 
-    private void setGender (Gender gender)
+    public void setGender (Gender gender)
     {
         this.gender = gender;
     }
 
-    private Gender getGender()
+    public Gender getGender()
     {
         return this.gender;
     }
+
 }

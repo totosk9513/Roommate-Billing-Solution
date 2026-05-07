@@ -1,6 +1,7 @@
 package org.roommate.models;
 
 import java.util.Date;
+import java.util.List;
 
 public class UtilityBill extends Bill
 {
@@ -9,13 +10,14 @@ public class UtilityBill extends Bill
     private boolean isInclusive_starting;
     private boolean isInclusive_ending;
 
-    public UtilityBill()
-    {
+//    public UtilityBill()
+//    {
+//
+//    }
 
-    }
-
-    public UtilityBill(Date startingDate, Date endingDate, boolean isInclusive_starting, boolean isInclusive_ending)
+    public UtilityBill(String name, Person payer, List<? extends Person> participators, double cost, Date startingDate, Date endingDate, boolean isInclusive_starting, boolean isInclusive_ending)
     {
+        super(name, cost, payer, participators);
         this.startingDate = startingDate;
         this.endingDate = endingDate;
         this.isInclusive_starting = isInclusive_starting;

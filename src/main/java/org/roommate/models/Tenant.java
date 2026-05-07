@@ -19,6 +19,11 @@ public class Tenant extends Person
     private String venmoID;
     private String zellID;
 
+    public Tenant(String name)
+    {
+        super(name);
+    }
+
     public Tenant(String name, Gender gender)
     {
         super(name, gender);
