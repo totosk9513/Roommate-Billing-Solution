@@ -38,7 +38,7 @@ public class IOU
     public String toString()
     {
         return String.format(
-                "[%s] %s -> %s : %.2f원 (발행일: %s)",
+                "[%s] %s -> %s : $USD[%.2f] (발행일: %s)",
                 involvedBill.getName(), // 연관된 영수증 이름
                 debtor.getName(),           // 채무자
                 creditor.getName(),         // 채권자

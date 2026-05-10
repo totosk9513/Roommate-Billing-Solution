@@ -8,6 +8,7 @@ import java.util.List;
 public abstract class CalculatorService
 {
     protected String name;
+    //TODO: SSOT 위반, Bill에 payer와 participators가 있음.
     protected Person payer;
     protected List<? extends Person> participators;
     protected Bill bill;
@@ -52,4 +53,33 @@ public abstract class CalculatorService
 
     public abstract void calc();
 
+    public Bill getBill()
+    {
+        return this.bill;
+    }
+
+    public Person getPayer()
+    {
+        return payer;
+    }
+
+    public List<? extends Person> getParticipators()
+    {
+        return participators;
+    }
+
+    public void setParticipators(List<? extends Person> participators)
+    {
+        this.participators = participators;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 }

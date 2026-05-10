@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+//TODO: Consider changing it to an interface.
+//Maybe having default, timebased, ratebased (current) interface would be helpful....
 public class WeightAssigner
 {
     private List<Person> participators;
