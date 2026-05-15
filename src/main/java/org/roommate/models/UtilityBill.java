@@ -1,21 +1,33 @@
 package org.roommate.models;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
 public class UtilityBill extends Bill
 {
-    private Date startingDate;
-    private Date endingDate;
+    private LocalDate startingDate;
+    private LocalDate endingDate;
     private boolean isInclusive_starting;
     private boolean isInclusive_ending;
+
+    private LocalDateTime dueDate;
 
 //    public UtilityBill()
 //    {
 //
 //    }
+    public UtilityBill(String name, Person payer, List<? extends Person> participators, double cost, LocalDate startingDate, LocalDate endingDate)
+    {
+        super(name, cost, payer, participators);
+        this.startingDate = startingDate;
+        this.endingDate = endingDate;
+        this.isInclusive_starting = true;
+        this.isInclusive_ending = false;
+    }
 
-    public UtilityBill(String name, Person payer, List<? extends Person> participators, double cost, Date startingDate, Date endingDate, boolean isInclusive_starting, boolean isInclusive_ending)
+    public UtilityBill(String name, Person payer, List<? extends Person> participators, double cost, LocalDate startingDate, LocalDate endingDate, boolean isInclusive_starting, boolean isInclusive_ending)
     {
         super(name, cost, payer, participators);
         this.startingDate = startingDate;
@@ -24,22 +36,22 @@ public class UtilityBill extends Bill
         this.isInclusive_ending = isInclusive_ending;
     }
 
-    public Date getStartingDate()
+    public LocalDate getStartingDate()
     {
         return startingDate;
     }
 
-    public void setStartingDate(Date startingDate)
+    public void setStartingDate(LocalDate startingDate)
     {
         this.startingDate = startingDate;
     }
 
-    public Date getEndingDate()
+    public LocalDate getEndingDate()
     {
         return endingDate;
     }
 
-    public void setEndingDate(Date endingDate)
+    public void setEndingDate(LocalDate endingDate)
     {
         this.endingDate = endingDate;
     }

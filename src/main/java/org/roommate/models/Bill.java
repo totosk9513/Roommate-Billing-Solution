@@ -3,26 +3,22 @@ package org.roommate.models;
 import java.time.LocalDateTime;
 import java.util.List;
 
-//TODO: interface나 abstract의 형태로 만들지 정해보기. 원래 Abstract으로 만들었음.
+//TODO: Abstract 으로 바꾸기.
 public class Bill
 {
     private String name;
     private double grandTotalPrice;
-//    private double subTotal;
-//    private List<BillFee> billFees ;
     private Person payer;
     private List<? extends Person> participators;
-//    private LocalDateTime dueDate;
     private LocalDateTime paidDate;
-//    private List<Item> items;
 
-    public Bill(String name, Double cost, Person payer)
-    {
-        this.name = name;
-        this.grandTotalPrice = cost;
-        this.payer = payer;
-        this.paidDate = LocalDateTime.now();
-    }
+//    public Bill(String name, Double cost, Person payer)
+//    {
+//        this.name = name;
+//        this.grandTotalPrice = cost;
+//        this.payer = payer;
+//        this.paidDate = LocalDateTime.now();
+//    }
 
     public Bill(String name, Double cost, Person payer, List<? extends Person> participators)
     {

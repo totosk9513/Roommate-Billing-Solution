@@ -59,6 +59,47 @@ public abstract class Person
         return debts;
     }
 
+    //Get IOUS of what this class person owns to person of parameter
+    public List<IOU> getMyDebtsOfPerson(Person person)
+    {
+        List<IOU> myDebts = new ArrayList<>();
+        for (IOU iou : IOUs)
+        {
+            if (iou.getCreditor().equals(person))
+            {
+                myDebts.add(iou);
+            }
+        }
+        return myDebts;
+    }
+
+
+    //Get IOUS of person of parameter owns to this class person
+    public List<IOU> getMyCreditsOfPerson(Person person)
+    {
+        List<IOU> myCredits = new ArrayList<>();
+        for (IOU iou : IOUs)
+        {
+            if (iou.getDebtor().equals(person))
+            {
+                myCredits.add(iou);
+            }
+        }
+        return myCredits;
+    }
+
+    public double getTotalPriceOfMyDebtsOfPerson(Person person)
+    {
+        List<IOU> myDebts = getMyDebtsOfPerson(person);
+        return myDebts.stream().mapToDouble(IOU::getAmount).sum();
+    }
+
+    public double getTotalPriceOfMyCreditsOfPerson(Person person)
+    {
+        List<IOU> myDebts = getMyCreditsOfPerson(person);
+        return myDebts.stream().mapToDouble(IOU::getAmount).sum();
+    }
+
     public List<IOU> getIouList()
     {
         return IOUs;

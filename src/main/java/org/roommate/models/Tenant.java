@@ -2,13 +2,14 @@ package org.roommate.models;
 
 import org.roommate.enums.Gender;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 public class Tenant extends Person
 {
     private boolean isCurrentTenant;
-    private List<Date> absentDate;
+    private List<LocalDate> absentDate;
 
 //    private List<Bill> expenses;
 //    private List<IOU> IOUS;
