@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 //TODO: Consider changing it to an interface.
 //Maybe having default, timebased, ratebased (current) interface would be helpful....
-public class WeightAssigner
+public class WeightAssigner implements IWeightAssigner
 {
     private List<Person> participators;
     private Map<Person, Double> weights;
@@ -18,10 +18,17 @@ public class WeightAssigner
      Input all the list of the Person, and assign no weight.
      * @param persons
      */
-    WeightAssigner (List<? extends  Person> persons)
+    WeightAssigner (List<? extends Person> persons)
     {
 
         weights = persons.stream().collect(Collectors.toMap(p -> p, p -> 0.0));
+    }
+
+    @Override
+    public Map<Person, Double> assignWeights(List<? extends Person> participators)
+    {
+        assignSameWeightToAll();
+        return weights;
     }
 
     public void assignSameWeightToAll()
